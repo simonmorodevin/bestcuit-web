@@ -7,35 +7,60 @@
   <meta name="description" content="Descubre nuestra gama de cubiertos comestibles, veganos y biodegradables. El Removedor, El Tenedor, La Cuchara, La Paletina.">
   <link rel="icon" href="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=32,h=32,fit=crop,f=png/ALpPMbl95zt93znw/galleta-sin-fondo-A1a5przloocRGwKr.png">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Hreflang for international SEO -->
+  <!-- Hreflang para SEO internacional -->
   <link rel="alternate" hreflang="fr" href="https://www.bestcuit.fr/catalogue.html">
   <link rel="alternate" hreflang="es" href="https://www.bestcuit.es/catalogo.html">
   <link rel="alternate" hreflang="x-default" href="https://www.bestcuit.fr/catalogue.html">
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "position": 1,
+        "name": "Removedor Comestible",
+        "description": "Un agitador de café delicioso y robusto que resiste el calor. Biodegradable y zero residuos.",
+        "image": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=600,fit=crop,f=png/ALpPMbl95zt93znw/removedor-ULB0oe3knjsalfDd.png",
+        "brand": { "@type": "Brand", "name": "BESTCUIT" }
+      },
+      {
+        "@type": "Product",
+        "position": 2,
+        "name": "Tenedor Comestible",
+        "description": "Un tenedor crujiente y ecológico para realzar tus ensaladas y platos fríos.",
+        "image": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=600,fit=crop,f=png/ALpPMbl95zt93znw/tenedor-mP3CPrR0x0pQ9L9G.png",
+        "brand": { "@type": "Brand", "name": "BESTCUIT" }
+      }
+    ]
+  }
+  </script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-
   <style>
     model-viewer { z-index: 1; --poster-color: transparent; outline: none; --shadow-intensity: 1; background: transparent; touch-action: none; }
     #palettine model-viewer { transform: scale(0.5625); transform-origin: center; }
     .nav.scrolled { background: var(--forest); backdrop-filter: none; border-bottom: none; }
     .catalogue-hero { background: var(--forest); min-height: 50vh; display: flex; align-items: center; padding: 80px 0 60px; position: relative; overflow: hidden; }
-    .catalogue-hero::before { content: 'CATÁLOGO'; position: absolute; bottom: -20px; right: -20px; font-family: var(--ff-display); font-size: clamp(80px, 16vw, 200px); font-weight: 700; color: rgba(244, 218, 195, 0.04); pointer-events: none; white-space: nowrap; }
+    .catalogue-hero::before { content: 'CATÁLOGO'; position: absolute; bottom: -20px; right: -20px; font-family: var(--ff-display); font-size: clamp(80px, 16vw, 200px); font-weight: 700; letter-spacing: -0.04em; color: rgba(244, 218, 195, 0.04); pointer-events: none; white-space: nowrap; }
+    .catalogue-hero-grain { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"); background-size: 200px 200px; pointer-events: none; }
+    .catalogue-hero-content { position: relative; z-index: 3; }
     .products-main { padding: 100px 0; background: var(--cream-soft); }
     .product-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px; padding-bottom: 120px; border-bottom: 1px solid rgba(212, 184, 150, 0.4); }
-    .product-row:last-child { border-bottom: none; }
-    .product-row.reverse { direction: rtl; }
-    .product-row.reverse > * { direction: ltr; }
+    .product-row.reverse { direction: rtl; } .product-row.reverse > * { direction: ltr; }
     .product-visual { position: relative; border-radius: var(--radius-lg); overflow: hidden; background: var(--forest); aspect-ratio: 3/4; min-height: 400px; }
-    .product-detail h2 { font-family: var(--ff-display); font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--text); line-height: 1.05; margin-bottom: 20px; }
+    .product-detail-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--wheat); margin-bottom: 16px; }
+    .product-detail-tag::before { content: ''; width: 20px; height: 1px; background: var(--wheat); }
+    .product-detail h2 { font-family: var(--ff-display); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 500; color: var(--text); letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 20px; }
+    .product-detail h2 em { font-style: italic; color: var(--wheat); }
     .product-specs-table { background: var(--white); border-radius: var(--radius); border: 1px solid rgba(212, 184, 150, 0.4); overflow: hidden; margin-bottom: 36px; }
-    .specs-header { padding: 14px 20px; background: var(--forest); color: var(--wheat-light); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
-    .spec-row { display: flex; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid rgba(212, 184, 150, 0.2); font-size: 0.85rem; }
-    .nutrition-section { background: var(--forest); padding: 100px 0; color: var(--cream); }
-    .nutrition-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .nutrition-table { background: var(--cream-soft); color: var(--text); border-radius: var(--radius-lg); overflow: hidden; }
-    .nutrition-row { display: flex; justify-content: space-between; padding: 16px 28px; border-bottom: 1px solid rgba(212, 184, 150, 0.2); }
-    .catalogue-cta { padding: 100px 0; background: var(--cream-dark); text-align: center; position: relative; }
-    @media (max-width: 900px) { .product-row { grid-template-columns: 1fr; } .nutrition-inner { grid-template-columns: 1fr; } }
+    .specs-header { padding: 14px 20px; background: var(--forest); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--wheat-light); }
+    .spec-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid rgba(212, 184, 150, 0.2); font-size: 0.85rem; }
+    .nutrition-section { background: var(--forest); padding: 100px 0; position: relative; overflow: hidden; }
+    .nutrition-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+    .ingredients-box { margin-top: 28px; padding: 20px 24px; background: rgba(244, 218, 195, 0.05); border: 1px solid rgba(215, 125, 40, 0.2); border-radius: var(--radius); }
+    .nutrition-table { background: var(--cream-soft); border: 1px solid rgba(212, 184, 150, 0.4); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .nutrition-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; border-bottom: 1px solid rgba(212, 184, 150, 0.2); }
+    @media (max-width: 900px) { .product-row { grid-template-columns: 1fr; gap: 48px; } .nutrition-inner { grid-template-columns: 1fr; gap: 48px; } }
   </style>
 </head>
 <body>
@@ -82,96 +107,97 @@
 
       <div class="product-row reveal" id="touillette">
         <div class="product-visual reveal-left">
-          <model-viewer src="img/Removedor.glb" alt="Removedor BESTCUIT 3D" auto-rotate camera-controls shadow-intensity="1" style="width: 100%; height: 100%;"></model-viewer>
+          <model-viewer src="img/Removedor.glb" alt="El Removedor 3D" style="width: 100%; height: 100%;" auto-rotate camera-controls shadow-intensity="1" touch-action="pan-y"></model-viewer>
         </div>
         <div class="product-detail reveal-right">
           <span class="product-detail-tag">Café y Bebidas calientes</span>
           <h2><em>El</em> Removedor</h2>
-          <p>¡Adiós a los agitadores de plástico o madera! Nuestro removedor es crujiente, delicioso y perfecto para cafés, capuchinos y tés. Resiste el calor y se disfruta al terminar la bebida.</p>
+          <p>¡Adiós a los removedores de plástico o madera! Nuestro agitador de café es crujiente, delicioso y diseñado para remover tus cafés, cappuccinos y tés. Resiste el calor y se disfruta al terminar tu bebida.</p>
           <dl class="product-specs-table">
             <div class="specs-header">Especificaciones técnicas</div>
             <div class="spec-row"><dt>Longitud</dt><dd>14 cm</dd></div>
             <div class="spec-row"><dt>Peso</dt><dd>4 g</dd></div>
             <div class="spec-row"><dt>Sabor</dt><dd>Vainilla</dd></div>
           </dl>
-          <a href="contacto.html" class="btn btn-dark">Pedir presupuesto</a>
+          <a href="contacto.html" class="btn btn-dark">Pedir</a>
         </div>
       </div>
 
       <div class="product-row reverse reveal" id="fourchette">
         <div class="product-visual reveal-right">
-          <model-viewer src="img/Tenedor.glb" alt="Tenedor BESTCUIT 3D" auto-rotate camera-controls shadow-intensity="1" style="width: 100%; height: 100%;"></model-viewer>
+          <model-viewer src="img/Tenedor.glb" alt="El Tenedor 3D" style="width: 100%; height: 100%;" auto-rotate camera-controls shadow-intensity="1" touch-action="pan-y"></model-viewer>
         </div>
         <div class="product-detail reveal-left">
           <span class="product-detail-tag">Ensaladas y Comidas</span>
           <h2><em>El</em> Tenedor</h2>
-          <p>Perfecto para poke bowls y ensaladas. Su estructura rígida permite pinchar alimentos con precisión, garantizando una experiencia fluida hasta el último bocado.</p>
+          <p>Perfecto para poke bowls y ensaladas, nuestro tenedor ofrece una solidez notable. Su estructura rígida permite pinchar tus alimentos con precisión, garantizando una experiencia fluida.</p>
           <dl class="product-specs-table">
             <div class="specs-header">Especificaciones técnicas</div>
             <div class="spec-row"><dt>Longitud</dt><dd>12 cm</dd></div>
             <div class="spec-row"><dt>Peso</dt><dd>10 g</dd></div>
             <div class="spec-row"><dt>Sabor</dt><dd>Natural</dd></div>
           </dl>
-          <a href="contacto.html" class="btn btn-dark">Pedir presupuesto</a>
+          <a href="contacto.html" class="btn btn-dark">Pedir</a>
         </div>
       </div>
 
       <div class="product-row reveal" id="cuillere">
         <div class="product-visual reveal-left">
-          <model-viewer src="img/Cuchara.glb" alt="Cuchara BESTCUIT 3D" auto-rotate camera-controls shadow-intensity="1" style="width: 100%; height: 100%;"></model-viewer>
+          <model-viewer src="img/Cuchara.glb" alt="La Cuchara 3D" style="width: 100%; height: 100%;" auto-rotate camera-controls shadow-intensity="1" touch-action="pan-y"></model-viewer>
         </div>
         <div class="product-detail reveal-right">
-          <span class="product-detail-tag">Postres y Meriendas</span>
+          <span class="product-detail-tag">Postres y Pausas dulces</span>
           <h2><em>La</em> Cuchara</h2>
-          <p>La aliada perfecta para postres. Ideal para yogures, compotas y helados, aportando un toque crujiente natural a cada bocado dulce.</p>
+          <p>Nuestra cuchara comestible es la aliada perfecta de tus postres. Realza tus yogures y compotas aportando un toque crujiente natural a cada bocado.</p>
           <dl class="product-specs-table">
             <div class="specs-header">Especificaciones técnicas</div>
             <div class="spec-row"><dt>Longitud</dt><dd>12 cm</dd></div>
             <div class="spec-row"><dt>Peso</dt><dd>10 g</dd></div>
             <div class="spec-row"><dt>Sabor</dt><dd>Natural</dd></div>
           </dl>
-          <a href="contacto.html" class="btn btn-dark">Pedir presupuesto</a>
+          <a href="contacto.html" class="btn btn-dark">Pedir</a>
         </div>
       </div>
 
       <div class="product-row reverse reveal" id="palettine">
         <div class="product-visual reveal-right">
-          <model-viewer src="img/Paletina.glb" alt="Paletina BESTCUIT 3D" auto-rotate camera-controls shadow-intensity="1" style="width: 100%; height: 100%;"></model-viewer>
+          <model-viewer src="img/Paletina.glb" alt="La Paletina 3D" style="width: 100%; height: 100%;" auto-rotate camera-controls shadow-intensity="1" touch-action="pan-y"></model-viewer>
         </div>
         <div class="product-detail reveal-left">
           <span class="product-detail-tag">Helados y Sorbetes</span>
           <h2><em>La</em> Paletina</h2>
-          <p>Especialmente diseñada para helados y yogures helados. Sustituye elegantemente a las paletinas de plástico o madera.</p>
+          <p>Especialmente diseñada para helados y sorbetes. Reemplaza elegantemente las cucharitas de plástico o madera con un toque de vainilla dulce.</p>
           <dl class="product-specs-table">
             <div class="specs-header">Especificaciones técnicas</div>
             <div class="spec-row"><dt>Longitud</dt><dd>6,5 cm</dd></div>
             <div class="spec-row"><dt>Peso</dt><dd>6 g</dd></div>
             <div class="spec-row"><dt>Sabor</dt><dd>Vainilla</dd></div>
           </dl>
-          <a href="contacto.html" class="btn btn-dark">Pedir presupuesto</a>
+          <a href="contacto.html" class="btn btn-dark">Pedir</a>
         </div>
       </div>
 
     </div>
   </main>
 
-  <section class="nutrition-section">
+  <section class="nutrition-section section-fade-down-dark">
     <div class="container">
       <div class="nutrition-inner">
-        <div class="nutrition-content">
+        <div class="nutrition-content reveal-left">
           <div class="section-label">Composición</div>
-          <h2 class="section-title">Ingredientes <em>naturales</em></h2>
-          <p>Cubiertos hechos a base de plantas, sin alérgenos mayores (Excepto gluten).</p>
-        </div>
-        <div class="nutrition-table">
-          <div style="padding: 24px 28px; background: var(--cream); border-bottom: 1px solid rgba(212, 184, 150, 0.3);">
-            <h3>Información nutricional</h3>
-            <p>VALORES POR 100 G</p>
+          <h2 class="section-title">Ingredientes <em>reales</em></h2>
+          <p>Todos nuestros cubiertos son a base de plantas, sin alérgenos mayores.</p>
+          <div class="ingredients-box">
+            <h4>Ingredientes</h4>
+            <p>Harina de arroz, aceites vegetales, almidón de maíz, almidón de tapioca, fécula de patata, fibra de bambú, espesantes (goma xantana), sal marina, gasificantes, aroma y lecitina de girasol.</p>
           </div>
+        </div>
+        <div class="nutrition-table reveal-right">
+          <div class="nutrition-table-header"><h3>Información nutricional</h3><p>VALORES POR 100 G</p></div>
           <dl>
             <div class="nutrition-row"><dt>Energía</dt><dd>1770 kJ / 420 kcal</dd></div>
             <div class="nutrition-row"><dt>Grasas</dt><dd>9,4 g</dd></div>
-            <div class="nutrition-row"><dt>Carbohidratos</dt><dd>72,5 g</dd></div>
+            <div class="nutrition-row"><dt>Hidratos de carbono</dt><dd>72,5 g</dd></div>
             <div class="nutrition-row"><dt>Proteínas</dt><dd>4,8 g</dd></div>
           </dl>
         </div>
@@ -179,18 +205,55 @@
     </div>
   </section>
 
+  <section class="catalogue-cta">
+    <div class="catalogue-cta-inner"><h2>¿Listo para probar <em>BESTCUIT</em>?</h2><a href="contacto.html" class="btn btn-dark">Pedir presupuesto</a></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" style="padding: 100px 0; background: var(--white);">
+    <div class="container">
+      <div class="section-label">Preguntas frecuentes</div>
+      <h2 class="section-title">Todo sobre <em>Bestcuit</em></h2>
+      <div class="faq-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px;">
+        <div class="faq-item"><h4>¿Cuánto tiempo se mantienen rígidos?</h4><p>Nuestros cubiertos están diseñados para mantenerse rígidos durante más de 45 minutos en bebidas calientes.</p></div>
+        <div class="faq-item"><h4>¿Qué sabor tienen?</h4><p>Tienen un sabor de galleta neutra y cereal, ligeramente crujiente.</p></div>
+        <div class="faq-item"><h4>¿Son reciclables?</h4><p>Son 100% biodegradables y compostables en pocos días si no se consumen.</p></div>
+        <div class="faq-item"><h4>¿Hay alérgenos?</h4><p>Contienen gluten (trigo). Estamos trabajando en una gama sin gluten.</p></div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container">
-      <div class="footer-bottom">
-        <p>&copy; 2024 BESTCUIT — Catálogo Profesional</p>
-        <div class="footer-bottom-links">
-          <a href="politica-de-privacidad.html">Privacidad</a>
-          <a href="condiciones-generales.html">Condiciones</a>
-        </div>
+      <div class="footer-inner">
+        <div class="footer-brand"><div class="footer-logo">BESTCUIT</div><p>Cubiertos comestibles y biodegradables.</p></div>
+        <div class="footer-col"><h4>Navegación</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="acerca-de.html">Nosotros</a></li><li><a href="catalogo.html">Catálogo</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
       </div>
+      <div class="footer-bottom"><p>BESTCUIT — Ecoinnovación & Sabor</p></div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('model-viewer').forEach(viewer => {
+      viewer.removeAttribute('camera-controls');
+      let isPointerDown = false;
+      let lastX = 0;
+      let currentTheta = 0;
+      const initialOrbit = viewer.getAttribute('camera-orbit');
+      if (initialOrbit) { currentTheta = parseFloat(initialOrbit.split(' ')[0]) || 0; }
+      viewer.addEventListener('wheel', (e) => { e.preventDefault(); }, { passive: false });
+      viewer.addEventListener('touchmove', (e) => { if (e.touches && e.touches.length > 1) { e.preventDefault(); } }, { passive: false });
+      viewer.addEventListener('pointerdown', (e) => { isPointerDown = true; lastX = e.clientX; });
+      window.addEventListener('pointerup', () => { isPointerDown = false; });
+      window.addEventListener('pointermove', (e) => {
+        if (!isPointerDown) return;
+        const deltaX = e.clientX - lastX;
+        lastX = e.clientX;
+        currentTheta -= deltaX * 0.5;
+        viewer.cameraOrbit = `${currentTheta}deg 75deg 105%`;
+      });
+    });
+  </script>
 </body>
 </html>
