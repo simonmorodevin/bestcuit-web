@@ -4,11 +4,11 @@
 .planning/
 .playwright-mcp/
 
-# Ignore legacy files in root
-index.html
-style.css
-script.js
-Visualizar.txt
+# Ignore legacy files in root ONLY
+/index.html
+/style.css
+/script.js
+/Visualizar.txt
 
 # Ignore mirror/archive
 bestcuit-mirror/
