@@ -37,11 +37,7 @@ if (revealEls.length) {
         const baseDelay = parseInt(entry.target.dataset.staggerDelay || 0);
         setTimeout(() => {
           entry.target.classList.add('revealed');
-          // Add a subtle animation pulse
-          entry.target.style.animation = 'none';
-          setTimeout(() => {
-            entry.target.style.animation = '';
-          }, 10);
+          
         }, delay + baseDelay);
         observer.unobserve(entry.target);
       }
@@ -116,3 +112,4 @@ magneticEls.forEach(el => {
     el.style.transform = 'translate(0, 0)';
   });
 });
+
