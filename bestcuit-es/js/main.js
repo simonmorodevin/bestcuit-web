@@ -1,4 +1,4 @@
-/* BESTCUIT — Shared JS */
+﻿/* BESTCUIT — Shared JS */
 
 // Parallax scrolling effect
 const parallaxElements = document.querySelectorAll('[data-parallax]');
@@ -99,6 +99,20 @@ if (counterEls.length) {
         counterObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 });
   counterEls.forEach(el => counterObserver.observe(el));
 }
+
+/* Web 10/10 Micro-UX: Magnetic Buttons */
+const magneticEls = document.querySelectorAll('.magnetic-btn');
+magneticEls.forEach(el => {
+  el.addEventListener('mousemove', (e) => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    el.style.transform = 	ranslate( + (x * 0.2) + px,  + (y * 0.2) + px);
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.transform = 'translate(0, 0)';
+  });
+});
