@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -171,40 +171,45 @@
       margin: 0 auto 64px;
       line-height: 1.75;
     }
-    .tech-cards {
+    .dispenser-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
     }
-    .tech-card {
+    .dispenser-card {
       background: rgba(244, 218, 195, 0.04);
       border: 1px solid rgba(244, 218, 195, 0.1);
       border-radius: var(--radius-lg);
-      padding: 32px 24px;
+      padding: 40px 32px;
       text-align: center;
       transition: all 0.35s var(--ease-out-expo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .tech-card:hover {
+    .dispenser-card:hover {
       background: rgba(244, 218, 195, 0.07);
       border-color: rgba(215, 125, 40, 0.4);
       transform: translateY(-6px);
     }
-    .tech-card .icon {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      display: block;
+    .dispenser-img {
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      margin-bottom: 28px;
+      object-fit: contain;
     }
-    .tech-card h4 {
+    .dispenser-card h4 {
       font-family: var(--ff-display);
-      font-size: 1.05rem;
+      font-size: 1.5rem;
       font-weight: 500;
       color: var(--cream);
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
-    .tech-card p {
-      font-size: 0.82rem;
-      color: rgba(244, 218, 195, 0.5);
-      line-height: 1.65;
+    .dispenser-card p {
+      font-size: 0.95rem;
+      color: rgba(244, 218, 195, 0.55);
+      line-height: 1.7;
     }
 
     /* ── ODD Section ──────────────────────────────────── */
@@ -424,11 +429,11 @@
       .zero-visual { grid-template-columns: 1fr; }
       .zero-img:first-child { aspect-ratio: 16/9; }
       .zero-img:not(:first-child) { display: none; }
-      .tech-cards { grid-template-columns: repeat(2, 1fr); }
+      .dispenser-grid { grid-template-columns: 1fr; gap: 32px; }
       .odd-inner { grid-template-columns: 1fr; gap: 48px; }
     }
     @media (max-width: 600px) {
-      .tech-cards { grid-template-columns: 1fr; }
+      /* .dispenser-grid already 1fr at 900px */
     }
 
     /* ── Impact Stats in Use&Eat ──────────────────────── */
@@ -578,28 +583,18 @@
     <div class="container">
       <div class="tech-inner">
         <div class="section-label reveal">Technologie</div>
-        <h2 class="reveal">Technologie propre<br><em>et R&amp;D engagée</em></h2>
-        <p class="reveal">Formulés à base de plantes, sans allergènes ni gluten, développés pour être à la fois pratiques et savoureux.</p>
-        <div class="tech-cards" data-stagger>
-          <div class="tech-card">
-            <span class="icon"></span>
-            <h4>Base végétale</h4>
-            <p>Formulés exclusivement à partir d'ingrédients d'origine végétale. Aucun produit animal dans notre recette.</p>
+        <h2 class="reveal">Nos distributeurs<br><em>à touillettes</em></h2>
+        <p class="reveal">Conçus pour chaque environnement : service en vrac pour le quotidien, présentoir premium pour les espaces les plus soignés.</p>
+        <div class="dispenser-grid" data-stagger>
+          <div class="dispenser-card">
+            <img src="img/Distributeur FRA base.png" alt="Distributeur Standard" class="dispenser-img" loading="lazy">
+            <h4>Format Standard</h4>
+            <p>Conçu pour le quotidien. Notre format cylindrique est la solution parfaite pour un service en vrac dans les bureaux et les cafés à fort volume. Un système léger, résistant et 100 % axé sur l'élimination rapide du plastique à usage unique.</p>
           </div>
-          <div class="tech-card">
-            <span class="icon"></span>
-            <h4>Sans allergènes majeurs</h4>
-            <p>Vegan, sans gluten, sans lactose. Adapté à toutes les restrictions alimentaires courantes.</p>
-          </div>
-          <div class="tech-card">
-            <span class="icon"></span>
-            <h4>Emballage pensé</h4>
-            <p>L'emballage est compostable ou recyclé. Choix du vrac pour éviter le plastique à l'unité.</p>
-          </div>
-          <div class="tech-card">
-            <span class="icon"></span>
-            <h4>Alignés ODD 11-15</h4>
-            <p>Notre projet soutient activement les Objectifs de Développement Durable des Nations Unies.</p>
+          <div class="dispenser-card">
+            <img src="img/Distributeur FRA pro.png" alt="Distributeur Pro" class="dispenser-img" loading="lazy">
+            <h4>Gamme Pro</h4>
+            <p>Pour les environnements les plus exigeants. Son design à base carrée et sa finition en méthacrylate de haute qualité garantissent une conservation hermétique optimale, apportant une touche premium et élégante à tout événement haut de gamme.</p>
           </div>
         </div>
       </div>

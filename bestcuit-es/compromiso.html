@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -171,40 +171,46 @@
       margin: 0 auto 64px;
       line-height: 1.75;
     }
-    .tech-cards {
+    .dispenser-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
     }
-    .tech-card {
+    .dispenser-card {
       background: rgba(244, 218, 195, 0.04);
       border: 1px solid rgba(244, 218, 195, 0.1);
       border-radius: var(--radius-lg);
-      padding: 32px 24px;
+      padding: 40px 32px;
       text-align: center;
       transition: all 0.35s var(--ease-out-expo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .tech-card:hover {
+    .dispenser-card:hover {
       background: rgba(244, 218, 195, 0.07);
       border-color: rgba(215, 125, 40, 0.4);
       transform: translateY(-6px);
     }
-    .tech-card .icon {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      display: block;
+    .dispenser-img {
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      margin-bottom: 24px;
+      border-radius: var(--radius);
+      object-fit: contain;
     }
-    .tech-card h4 {
+    .dispenser-card h4 {
       font-family: var(--ff-display);
-      font-size: 1.05rem;
+      font-size: 1.4rem;
       font-weight: 500;
       color: var(--cream);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
-    .tech-card p {
-      font-size: 0.82rem;
-      color: rgba(244, 218, 195, 0.5);
-      line-height: 1.65;
+    .dispenser-card p {
+      font-size: 0.95rem;
+      color: rgba(244, 218, 195, 0.55);
+      line-height: 1.7;
     }
 
     /* ── ODD Section ──────────────────────────────────── */
@@ -424,11 +430,11 @@
       .zero-visual { grid-template-columns: 1fr; }
       .zero-img:first-child { aspect-ratio: 16/9; }
       .zero-img:not(:first-child) { display: none; }
-      .tech-cards { grid-template-columns: repeat(2, 1fr); }
+      .dispenser-grid { grid-template-columns: 1fr; gap: 32px; }
       .odd-inner { grid-template-columns: 1fr; gap: 48px; }
     }
     @media (max-width: 600px) {
-      .tech-cards { grid-template-columns: 1fr; }
+      /* .dispenser-grid already 1fr at 900px */
     }
 
     /* ── Impact Stats in Use&Eat ──────────────────────── */
@@ -578,28 +584,18 @@
     <div class="container">
       <div class="tech-inner">
         <div class="section-label section-label-center reveal">Tecnología</div>
-        <h2 class="reveal">Tecnología limpia<br><em>e I+D comprometida</em></h2>
-        <p class="reveal">Formulados a base de plantas, sin alérgenos ni gluten, desarrollados para ser prácticos y sabrosos.</p>
-        <div class="tech-cards" data-stagger>
-          <div class="tech-card">
-            <span class="icon"></span>
-            <h4>Base Vegetal</h4>
-            <p>Formulados exclusivamente con ingredientes de origen vegetal. Ningún producto animal en nuestra fórmula.</p>
+        <h2 class="reveal">Nuestros dispensadores<br><em>de removedores</em></h2>
+        <p class="reveal">Diseñados para cada entorno: servicio a granel para el día a día, expositor premium para los espacios más exigentes.</p>
+        <div class="dispenser-grid" data-stagger>
+          <div class="dispenser-card">
+            <img src="img/Dispensador ESP base.png" alt="Dispensador Standard" class="dispenser-img">
+            <h4>Formato Estándar</h4>
+            <p>Diseñado para el día a día. Nuestro formato cilíndrico es la solución perfecta para servir a granel en oficinas y cafeterías con alto volumen. Un sistema ligero, resistente y 100% enfocado en eliminar los plásticos de un solo uso de forma rápida y sencilla.</p>
           </div>
-          <div class="tech-card">
-            <span class="icon"></span>
-            <h4>Sin alérgenos principales</h4>
-            <p>Vegano, sin gluten, sin lactosa. Apto para todas las restricciones dietéticas comunes.</p>
-          </div>
-          <div class="tech-card">
-            <span class="icon"></span>
-            <h4>Embalaje Responsable</h4>
-            <p>El embalaje es compostable o reciclado. Opción de granel para evitar plástico por unidad.</p>
-          </div>
-          <div class="tech-card">
-            <span class="icon"></span>
-            <h4>Alineados con ODS 11-15</h4>
-            <p>Nuestro proyecto apoya activamente los Objetivos de Desarrollo Sostenible de las Naciones Unidas.</p>
+          <div class="dispenser-card">
+            <img src="img/Dispensador ESP pro.png" alt="Dispensador Pro" class="dispenser-img">
+            <h4>Línea Pro</h4>
+            <p>Para los entornos más exigentes. Su diseño con base cuadrada y acabado en metacrilato de alta calidad garantiza una conservación hermética óptima, aportando un toque premium y elegante a cualquier barra o evento de alta hostelería.</p>
           </div>
         </div>
       </div>
